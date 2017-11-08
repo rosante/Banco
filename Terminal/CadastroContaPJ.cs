@@ -61,24 +61,6 @@ namespace Terminal
             cpj.Numero = Console.ReadLine();
                   
         }
-        public string SalvaConta()
-        {
-            string msg=null;
-            StreamWriter wr = null;
-            try{
-            wr = new StreamWriter("Contas.csv", true);
-            Empresa empresa = new Empresa();
-            ContaPJ cpj = new ContaPJ();
-            wr.WriteLine(empresa.RazaoSocial+";"+empresa.CNPJ+";"+empresa.Abertura+";"+cpj.Agencia+";"+cpj.Numero+";"+cpj.Saldo);
-            }
-            catch(Exception e){
-                msg = "Ocorreu um erro ao Salvar sua conta.\nErro: "+e.Message;
-            }
-            finally{
-                wr.Close();
-                msg = "Conta Salva com Sucesso!";
-            }
-            return msg;
-        } 
+        
     }
 }
